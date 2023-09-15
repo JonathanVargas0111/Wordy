@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.item {
+    width: 100%;
+    /* Ocupa todo el ancho en dispositivos móviles */
+    margin-bottom: 20px;
+    /* Espaciado entre elementos */
+}
+
+/* Configuración de diseño en dispositivos de pantalla grande */
+@media (min-width: 1280px) {
+    .container {
+        flex-wrap: nowrap;
+        /* Evita el desplazamiento de elementos en dispositivos de pantalla grande */
+    }
+
+    .item {
+        width: calc(33.33% - 20px);
+        color: rgb(136, 136, 136);
+        div {
+            font-size: 1.5rem;
+        }
+        h3{
+            margin: 1rem;
+            font-weight: 600;
+        }
+        p{
+            margin: 0;
+        }
+
+    }
+
+    /* El último elemento en la fila no tiene margen derecho */
+    .item:nth-child(3n) {
+        margin-right: 0;
+    }
+}
