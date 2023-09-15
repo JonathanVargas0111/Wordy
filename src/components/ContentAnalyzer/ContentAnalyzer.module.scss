@@ -7,13 +7,25 @@
 
 .item {
     width: 100%;
-    /* Ocupa todo el ancho en dispositivos móviles */
-    margin-bottom: 20px;
-    /* Espaciado entre elementos */
+    margin-bottom: 2rem;
+    padding: 10px;
+    
+    div {
+        font-size: 2.5rem;
+    }
+    h3{
+        margin-top: 1rem;
+        font-weight: 600;
+    }
+    p{
+        margin-top: 1rem;
+        margin: 0;
+    }
+
 }
 
 /* Configuración de diseño en dispositivos de pantalla grande */
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
     .container {
         flex-wrap: nowrap;
         /* Evita el desplazamiento de elementos en dispositivos de pantalla grande */

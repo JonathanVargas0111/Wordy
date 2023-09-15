@@ -27,9 +27,9 @@ function App() {
     <div className={`${styles.app} ${styles[theme]}`}>
       <header className={styles.header}>
         <div className={styles.logo}>Wordy</div>
-        <button className={styles.themeButton} onClick={toggleTheme}>
+        {/* <button className={styles.themeButton} onClick={toggleTheme}>
           {theme === "light" ? "dark" : "light"}
-        </button>
+        </button> */}
       </header>
       <main className={styles.content}>
         <h3>Un glosario automático para comprender el contenido.</h3>
