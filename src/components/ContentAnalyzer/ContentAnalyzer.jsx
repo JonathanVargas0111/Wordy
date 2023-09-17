@@ -13,9 +13,9 @@ function ContentAnalyzer() {
                 <div>
                     <BiSolidPaste />
                 </div>
-                <h3>
+                <h2>
                     Ingresar el Enlace del Video
-                </h3>
+                </h2>
                 <p>
                     Pega o escribe el enlace del video de YouTube
                 </p>
@@ -24,20 +24,20 @@ function ContentAnalyzer() {
                 <div>
                     <BiSolidAnalyse />
                 </div>
-                <h3>
-                    Analizar el Contenido
-                </h3>
+                <h2>
+                    Analiza el Contenido
+                </h2>
                 <p>
-                    La aplicación procesará el video y generará palabras clave
+                La aplicación procesa el video, analiza el contenido para identificar palabras clave y contexto. Luego, genera una lista de palabras clave importantes
                 </p>
             </div>
             <div className={styles.item}>
                 <div>
                     <FaListUl />
                 </div>
-                <h3>
+                <h2>
                     Lista de palabras
-                </h3>
+                </h2>
                 <p>
                     Opcionalmente, traduce palabras clave y muestra imágenes relacionadas
                 </p>

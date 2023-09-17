@@ -7,19 +7,25 @@
 
 .item {
     width: 100%;
-    margin-bottom: 2rem;
-    padding: 10px;
-    
+    padding: 1rem;
+    max-width: 350px;
+    margin: 0 auto;
     div {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
-    h3{
-        margin-top: 1rem;
+
+    h2 {
+        margin-top: 0.5rem;
         font-weight: 600;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
     }
-    p{
-        margin-top: 1rem;
-        margin: 0;
+
+    p {
+        margin-top: 0.5rem;
+        font-size: 1rem;
+        line-height: 1.5rem;
+
     }
 
 }
@@ -27,22 +33,32 @@
 /* Configuración de diseño en dispositivos de pantalla grande */
 @media (min-width: 768px) {
     .container {
+        margin-top: 4rem;
         flex-wrap: nowrap;
         /* Evita el desplazamiento de elementos en dispositivos de pantalla grande */
     }
 
     .item {
         width: calc(33.33% - 20px);
-        color: rgb(136, 136, 136);
+
         div {
             font-size: 1.5rem;
         }
-        h3{
+
+        h2 {
             margin: 1rem;
             font-weight: 600;
+            font-size: 1.25rem;
+            /* 20px */
+            line-height: 1.75rem;
+            /* 28px */
         }
-        p{
-            margin: 0;
+
+        p {
+            font-size: 1rem;
+            /* 16px */
+            line-height: 1.5rem;
+            /* 24px */
         }
 
     }
