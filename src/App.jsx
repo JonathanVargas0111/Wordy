@@ -5,8 +5,10 @@ import styles from "./App.module.scss";
 import ContentAnalyzer from "./components/ContentAnalyzer/ContentAnalyzer";
 import Footer from "./components/Footer/Footer";
 import { HiOutlineRocketLaunch } from 'react-icons/hi2'
-import {MdDarkMode} from 'react-icons/md'
-import {BsSun} from 'react-icons/bs'
+import { MdDarkMode } from 'react-icons/md'
+import { BsSun } from 'react-icons/bs'
+
+import { CreateUser } from './suprabase/supabaseFunction'
 
 function App() {
   const [theme, setTheme] = useState("dark");
@@ -21,19 +23,24 @@ function App() {
     setEmail(e.target.value);
   };
 
-  const handleRegister = () => {
-    // Aquí puedes implementar la lógica para guardar la dirección de correo electrónico
-    // y enviar actualizaciones cuando la aplicación esté disponible.
+  const handleRegister = async () => {
+    const users = await CreateUser(email);
+    if (!users) {
+      console.log("No se registro");
+    } else {
+      console.log("Se registro");
+    }
+    setEmail("")
     setIsRegistered(true);
   };
 
   return (
     <div className={`${styles.app} ${styles[theme]}`}>
-      <header className={styles.header}>        
-          <div className={styles.logo}>Wordy</div>
-          <button className={styles.themeButton} onClick={toggleTheme}>
-            {theme === "light" ? <MdDarkMode/> : <BsSun/>}
-          </button>        
+      <header className={styles.header}>
+        <div className={styles.logo}>Wordy</div>
+        <button className={styles.themeButton} onClick={toggleTheme}>
+          {theme === "light" ? <MdDarkMode /> : <BsSun />}
+        </button>
       </header>
       <main className={styles.content}>
         <span>Próximamente <HiOutlineRocketLaunch className={styles.RocketLaunch} /></span>
@@ -56,8 +63,8 @@ function App() {
           <button onClick={handleRegister}>Join the waitlist </button>
         </div>
         <div className={styles.containerInoSend}>
-        {isRegistered ? (
-          <p className={styles.infoSend}> ¡Gracias por registrarte! Te informaremos cuando la aplicación esté disponible.</p>
+          {isRegistered ? (
+            <p className={styles.infoSend}> ¡Gracias por registrarte! Te informaremos cuando la aplicación esté disponible.</p>
           ) : (null)}
         </div>
         <ContentAnalyzer />
